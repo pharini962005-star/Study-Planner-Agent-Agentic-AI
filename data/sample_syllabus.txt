@@ -1,0 +1,6 @@
+Subject: Machine Learning (Exam: 2026-12-10)
+Unit 1: Introduction, Linear Regression (6 hours)
+Unit 2: Classification, Logistic Regression, SVM (8 hours)
+Unit 3: Decision Trees, Random Forests (5 hours)
+Unit 4: Neural Networks and Deep Learning (10 hours)
+Unit 5: Clustering and Dimensionality Reduction (6 hours)

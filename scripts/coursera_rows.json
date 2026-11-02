@@ -1,0 +1,14 @@
+[
+ {"title": "Data Structures in C", "Organization": "University of Michigan", "Level": "Intermediate level",
+  "Skills": "['memory management', 'Structures', 'Pointers', 'Arrays']",
+  "Schedule": "15 hours to complete (3 weeks at 5 hours a week)"},
+ {"title": "Statistics for Data Science with Python", "Organization": "IBM", "Level": null,
+  "Skills": "['Probability And Statistics', 'Basic Descriptive Statistics', 'Statistical Hypothesis Testing', 'Data Visualization', 'Regression Analysis']",
+  "Schedule": "14 hours to complete (3 weeks at 4 hours a week)"},
+ {"title": "Database Management with Java and SQL", "Organization": "Amazon", "Level": "Beginner level",
+  "Skills": "['Software Development', 'Java Database Connectivity', 'Java Programming', 'Databases', 'SQL Queries']",
+  "Schedule": "30 hours to complete (3 weeks at 10 hours a week)"},
+ {"title": "Operating Systems and Networking Fundamentals", "Organization": "Packt", "Level": "Intermediate level",
+  "Skills": "['operating systems', 'networking fundamentals', 'Windows installation', 'Linux installation', 'network security']",
+  "Schedule": "11 hours to complete (3 weeks at 3 hours a week)"}
+]

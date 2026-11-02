@@ -1,0 +1,8 @@
+Subject: Operating Systems and Networking Fundamentals (Exam: 2026-12-12)
+Source: Hugging Face dataset azrai99/coursera-course-dataset - course by Packt
+Level: Intermediate
+Unit 1: Operating systems (2.25 hours)
+Unit 2: Networking fundamentals (2.25 hours)
+Unit 3: Windows installation (2.25 hours)
+Unit 4: Linux installation (2.25 hours)
+Unit 5: Network security (2 hours)

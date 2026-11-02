@@ -1,0 +1,6 @@
+groq>=0.11.0
+streamlit>=1.45.0
+python-dotenv>=1.0.0
+pandas>=2.0.0
+pypdf>=4.0.0
+matplotlib>=3.7.0   # only for scripts/draw_*.py (diagrams)

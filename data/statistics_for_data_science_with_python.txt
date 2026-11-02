@@ -1,0 +1,7 @@
+Subject: Statistics for Data Science with Python (Exam: 2026-12-01)
+Source: Hugging Face dataset azrai99/coursera-course-dataset - course by IBM
+Unit 1: Probability And Statistics (3 hours)
+Unit 2: Basic Descriptive Statistics (2.75 hours)
+Unit 3: Statistical Hypothesis Testing (2.75 hours)
+Unit 4: Data Visualization (2.75 hours)
+Unit 5: Regression Analysis (2.75 hours)

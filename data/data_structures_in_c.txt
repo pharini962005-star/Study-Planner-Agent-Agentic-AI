@@ -1,0 +1,7 @@
+Subject: Data Structures in C (Exam: 2026-11-25)
+Source: Hugging Face dataset azrai99/coursera-course-dataset - course by University of Michigan
+Level: Intermediate
+Unit 1: Memory management (3.75 hours)
+Unit 2: Structures (3.75 hours)
+Unit 3: Pointers (3.75 hours)
+Unit 4: Arrays (3.75 hours)

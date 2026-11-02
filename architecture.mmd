@@ -1,0 +1,49 @@
+flowchart TD
+    subgraph DATA["Data source"]
+        HF["Hugging Face dataset<br/>azrai99/coursera-course-dataset"] --> GEN["make_syllabi.py<br/>skills to units, hours split, level"]
+        GEN --> FILES["data/*.txt syllabi<br/>(+ user uploads .txt/.md/.csv/.pdf)"]
+    end
+
+    subgraph UI["Interface layer"]
+        ST["Streamlit app<br/>Agent | Split-up | Schedule | Progress | Reminders"]
+        CLI["CLI: python agent.py"]
+    end
+
+    subgraph CORE["Agent core - agent.py"]
+        SP["System prompt<br/>goal, workflow, rules"]
+        LLM["Groq LLM<br/>Llama 3.3 70B, tool calling"]
+        LOOP{"Plan - Act - Observe loop<br/>max 25 steps"}
+        GUARD["Guardrails<br/>retries + backoff, malformed-call recovery,<br/>repeat guard, output truncation,<br/>history compaction, prompt-injection rule"]
+        SP --> LLM --> LOOP
+        GUARD -.- LOOP
+    end
+
+    subgraph TOOLS["Tool layer - tools.py (21 tools, validated by run_tool)"]
+        PER["Perceive<br/>list_subjects, parse_syllabus,<br/>read_file, list_files, get_today"]
+        PLAN["Plan<br/>plan_all_subjects, plan_schedule,<br/>reschedule_missed"]
+        TRACK["Track<br/>log_progress, get_progress, get_overview,<br/>list_schedule, mark_session_done"]
+        ACT["Act / output<br/>add_reminder, export_timetable, write_file"]
+        UTIL["Utility<br/>calculator, days_between"]
+    end
+
+    subgraph ENGINE["Planning engine - planner.py (deterministic)"]
+        PARSE["Syllabus parser<br/>hours, dates, level, tags"]
+        DIFF["Difficulty<br/>user > LLM rating > tag > estimate"]
+        SCHED["Multi-subject scheduler<br/>revision reserved, earliest exam first,<br/>1-2h blocks, hard topics first +20%,<br/>fallback + needed h/day"]
+    end
+
+    DB[("SQLite memory<br/>sessions, reminders, subjects")]
+
+    FILES --> PER
+    ST <--> CORE
+    CLI <--> CORE
+    LOOP -->|"tool call (JSON args)"| TOOLS
+    TOOLS -->|"result or Error: ..."| LOOP
+    PER --> PARSE
+    PLAN --> DIFF --> SCHED
+    PLAN --> DB
+    TRACK <--> DB
+    ACT --> DB
+    ACT --> OUT["timetable.md + reminders"]
+    ST -->|"direct: Re-plan now, tick done, log hours"| TOOLS
+    LOOP -->|"final answer"| ST

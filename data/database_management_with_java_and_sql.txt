@@ -1,0 +1,8 @@
+Subject: Database Management with Java and SQL (Exam: 2026-12-05)
+Source: Hugging Face dataset azrai99/coursera-course-dataset - course by Amazon
+Level: Beginner
+Unit 1: Software Development (6 hours)
+Unit 2: Java Database Connectivity (6 hours)
+Unit 3: Java Programming (6 hours)
+Unit 4: Databases (6 hours)
+Unit 5: SQL Queries (6 hours)
